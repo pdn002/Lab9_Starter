@@ -84,7 +84,9 @@
       <button>End Timer</button>
       <button>Console Trace</button>
       <button>Trigger a Global Error</button>
+
       <button>Test try/catch</button>
+      <button>custom error</button>
     </section>
   </main>
 
@@ -153,6 +155,7 @@
       console.log(global_error);
     });
 
+
     errorBtns[15].addEventListener('click', function() {
       try{
         if (true) throw 'throw test';
@@ -168,6 +171,25 @@
       }
       
     });
+
+
+    class Error {
+      constructor(){
+        this.message = 'custom error';
+      }
+    }
+    function test(){
+      throw new Error();
+    }
+    errorBtns[16].addEventListener('click', function() {
+      try {
+        test();
+      }
+      catch(err){
+        console.error(err.message);
+      }
+    });
+    
 
 
   </script>
