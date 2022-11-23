@@ -84,6 +84,7 @@
       <button>End Timer</button>
       <button>Console Trace</button>
       <button>Trigger a Global Error</button>
+      <button>Test try/catch</button>
     </section>
   </main>
 
@@ -152,6 +153,21 @@
       console.log(global_error);
     });
 
+    errorBtns[15].addEventListener('click', function() {
+      try{
+        if (true) throw 'throw test';
+        let form = document.querySelector('form_typo');
+        console.log(form.innerHTML);
+      }
+      catch(err){
+        console.error('error cought');
+        console.error(err);
+      }
+      finally{
+        console.log('finally runs regardless');
+      }
+      
+    });
 
 
   </script>
