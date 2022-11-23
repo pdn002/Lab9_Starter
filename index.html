@@ -69,7 +69,7 @@
     </form>
 
     <section id="error-btns">
-      <button>Console Log</button>
+      <button id="log">Console Log</button>
       <button>Console Error</button>
       <button>Console Count</button>
       <button>Console Warn</button>
@@ -97,11 +97,63 @@
       let operator = document.querySelector('#operator').value;
       output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
     });
-
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
 
     // Start your code here
     // You may move this JS to another file if you wish
+    let output = document.querySelector('output');
+    errorBtns[0].addEventListener('click', function() {
+      console.log('log');
+    });
+    errorBtns[1].addEventListener('click', function() {
+      console.error('error');
+    });
+    errorBtns[2].addEventListener('click', function() {
+      console.count();
+      console.count();
+    });
+    errorBtns[3].addEventListener('click', function() {
+      console.warn('warning');
+    });
+    errorBtns[4].addEventListener('click', function() {
+      console.assert(output.innerHTML === 'a', 'assert');
+    });
+    errorBtns[5].addEventListener('click', function() {
+      console.clear();
+    });
+    errorBtns[6].addEventListener('click', function() {
+      console.dir(output);
+    });
+    errorBtns[7].addEventListener('click', function() {
+      console.dirxml(output);
+    });
+    errorBtns[8].addEventListener('click', function() {
+      console.group();
+    });
+    errorBtns[9].addEventListener('click', function() {
+      console.groupEnd();
+    });
+    errorBtns[10].addEventListener('click', function() {
+      console.table([0, 10, 20 ,30]);
+    });
+    errorBtns[11].addEventListener('click', function() {
+      console.time();
+    });
+    errorBtns[12].addEventListener('click', function() {
+      console.timeEnd();
+    });
+    errorBtns[13].addEventListener('click', function() {
+      function one(){
+        console.trace();
+      }
+      one();
+    });
+    errorBtns[14].addEventListener('click', function() {
+      console.log(global_error);
+    });
+
+
+
   </script>
 </body>
 
